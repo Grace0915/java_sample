@@ -1,7 +1,6 @@
 public class Person {
     public enum Gender {
-        MALE,
-        FEMALE
+        MAN, WOMAN
     }
 
     private Gender gender;
@@ -11,16 +10,19 @@ public class Person {
     }
 
     public void speak() {
-        if (gender == Gender.MALE) {
-            System.out.println("I'm a man");
-        } else if (gender == Gender.FEMALE) {
-            System.out.println("I'm a woman");
+        switch (gender) {
+            case MAN:
+                System.out.println("I'm a man");
+                break;
+            case WOMAN:
+                System.out.println("I'm a woman");
+                break;
         }
     }
 
     public static void main(String[] args) {
-        Person malePerson = new Person(Gender.MALE);
-        Person femalePerson = new Person(Gender.FEMALE);
+        Person malePerson = new Person(Gender.MAN);
+        Person femalePerson = new Person(Gender.WOMAN);
 
         malePerson.speak();
         femalePerson.speak();
